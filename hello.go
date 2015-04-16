@@ -21,11 +21,11 @@ func main() {
 	if err := json.Unmarshal(body, &dat); err != nil {
 		panic(err)
 	}
-  if _, ok := dat["name"]; ok {
-    fmt.Println("Name element found")
-  } else {
-    fmt.Println("Name element not found")
-  }
+	if _, ok := dat["name"]; ok {
+		fmt.Println("Name element found")
+	} else {
+		fmt.Println("Name element not found")
+	}
 }
 
 func perror(err error) {
