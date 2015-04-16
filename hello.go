@@ -6,11 +6,6 @@ import "io/ioutil"
 import "os"
 import "encoding/json"
 
-func perror(err error) {
-	if err != nil {
-		panic(err)
-	}
-}
 func main() {
 
 	args := os.Args[1:]
@@ -26,5 +21,15 @@ func main() {
 	if err := json.Unmarshal(body, &dat); err != nil {
 		panic(err)
 	}
-	fmt.Println(dat)
+  if _, ok := dat["name"]; ok {
+    fmt.Println("Name element found")
+  } else {
+    fmt.Println("Name element not found")
+  }
+}
+
+func perror(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
